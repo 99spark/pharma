@@ -1,0 +1,185 @@
+<include href="views/header.html"></include>
+
+<div class="container mt-4">
+
+
+    <!--<artical >-->
+    <!--    <h3 class="p-4">here you can enter codes and find the prices by quarter</h3>-->
+    <!--</artical>-->
+
+
+    <div class="container mt-4 mb-4">
+        <!--        <div class="row">-->
+        <div class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title">Enter Codes</h5>
+                <!--            <h6 class="card-subtitle mb-2 text-muted">enter codes</h6>-->
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <!--                    <label for="formGroupExampleInput">Enter Code</label>-->
+                        <input type="text" class="form-control" id="formGroupExampleInput" value="{{@drug1}}" name="drug1"
+                               placeholder="Enter Jcode">
+                    </div>
+                                        <div class="form-group">
+                                            <!--                    <label for="formGroupExampleInput2">Another label</label>-->
+                                            <input type="text" class="form-control" id="formGroupExampleInput2" value = "{{@drug2}}" placeholder="Enter Jcode" name="drug2">
+                                        </div>
+                                        <div class="form-group">
+                                            <!--                    <label for="formGroupExampleInput">Example label</label>-->
+                                            <input type="text" class="form-control" id="formGroupExampleInput3" value = "{{@drug3}}" placeholder="Enter Jcode" name="drug3">
+                                        </div>
+                                        <div class="form-group">
+                                            <!--                    <label for="formGroupExampleInput2">Another label</label>-->
+                                            <input type="text" class="form-control" id="formGroupExampleInput4" value = "{{@drug4}}" placeholder="Enter Jcode" name="drug4">
+                                        </div>
+
+
+
+
+                    <div class="col-auto my-1">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Starting quarter</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect3"
+                                name="first-quarter-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+
+                    <!--select begining  year-->
+                    <div class="col-auto my-1">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Starting year</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="first-year-select">
+                            <option value="2022" selected>2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+
+
+                                        <!--                    select quarter-->
+                                        <div class="col-auto my-1">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Ending quarter</label>
+                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect5" name="second-quarter">
+                                                <option value ="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+
+                                        <!--select begining year year-->
+                                        <div class="col-auto my-1">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Ending year</label>
+                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect7" name="second-year">
+                                                <option value="2022" selected>2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                            </select>
+                                        </div>
+
+
+<!--                                        &lt;!&ndash;end quarter&ndash;&gt;-->
+<!--                                        <div class="form-check mt-2">-->
+<!--                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">-->
+<!--                                            <label class="form-check-label" for="exampleRadios2">-->
+<!--                                                past quarter price-->
+<!--                                            </label>-->
+<!--                                            <label for="date">date range </label>-->
+<!--                                            <input type="date" id="date">-->
+<!--                                        </div>-->
+
+<!--                                        <div class="form-check ">-->
+<!--                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >-->
+<!--                                            <label class="form-check-label" for="exampleRadios3">-->
+<!--                                                Graph previous quarter price's-->
+<!--                                            </label>-->
+<!--                                            <label for="date-2">date range </label>-->
+<!--                                            <input type="date" id="date-2">-->
+<!--                                        </div>-->
+
+                    <button type="submit" value="submit" class="btn btn-outline-primary">Submit</button>
+
+                </form>
+
+            </div>
+        </div>
+
+
+<!--        <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <div class="ml-auto">To search multiple codes <a-->
+<!--                        href="https://pharmadp.greenriverdev.com/Pharmaceutical/userLogin">login</a> or <a-->
+<!--                        href="https://pharmadp.greenriverdev.com/Pharmaceutical/register" target="_blank">-->
+<!--                    register</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+        <check if="{{@drugPrices}}">
+<!--            <repeat group="{{ @drugPrices }}" value="{{ @drugPrice }}">-->
+
+<div class="mt-4">
+
+                <table class="table table-sm " id="tblCustomers">
+                    <thead>
+                    <tr>
+                        <th scope="col">Hcpcs code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Payment limit</th>
+                        <th scope="col">Quarter</th>
+                        <th scope="col">Year</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <repeat group="{{ @drugPrices }}" value="{{ @drugPrice }}">
+                    <tr>
+                        <!--            <th scope="row">1</th>-->
+                        <td>{{@drugPrice['hcpsc_code']}}</td>
+                        <td>{{@drugPrice['short_description']}}</td>
+                        <td>{{@drugPrice['payment_limit']}}</td>
+                        <td>{{@drugPrice['quarter']}}</td>
+                        <td>{{@drugPrice['year']}}</td>
+                    </tr>
+                    </repeat>
+                    </tbody>
+                </table>
+
+
+                <!--                <p> Hcpcs Code: {{@drugPrice['hcpsc_code']}}</p>-->
+                <!--                <p> Hcpcs Name: {{@drugPrice['short_description']}}</p>-->
+                <!--                <p> Hcpcs Price: {{@drugPrice['payment_limit']}}</p>-->
+                <!--                <p> Hcpcs Quarter: {{@drugPrice['quarter']}}</p>-->
+                <!--                <p> Hcpcs Year: {{@drugPrice['year']}}</p>-->
+                <!--                <br>-->
+</div>
+
+
+        </check>
+
+        <!--        <div>-->
+        <!--            <form method="post" enctype="multipart/form-data">-->
+        <!--                <div>-->
+        <!--                    <p>upload csv: <input type="file" name="file" /></p>-->
+        <!--                    <p><input type="submit" name="submit" value="Import"/></p>-->
+        <!--                </div>-->
+        <!--            </form>-->
+        <!--        </div>-->
+
+        <!--chart code-->
+        <!--        <div class="container mx-auto pt-5 pb-5">-->
+        <!--            <canvas  id="myChart" style="width:100%;max-width:500px" style="display:block;margin-left:auto;margin-right:auto;"></canvas>-->
+
+        <!--        </div>-->
+
+
+    </div>
+</div>
+
+
+<include href="views/footer.html"></include>
+

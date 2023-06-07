@@ -1,0 +1,90 @@
+/*.jumbotron {*/
+/*    background-image: url("../images/syringe.jpg");*/
+/*    background-size: cover;*/
+/*    height: 300px;*/
+/*}*/
+/*.logo{*/
+/*    height:50px;*/
+/*}*/
+
+
+body{
+    margin: 0;
+}
+
+
+.hero {
+    /*background-color: darkgreen;*/
+    background-color: #5c919b;
+    /*background-image: url("../images/iv.jpg");*/
+    background-image: url("../images/injection2.jpg");
+    background-size: cover;
+    /*background-repeat: no-repeat;*/
+    /*padding-top: 200px;*/
+    padding-bottom: 100px;
+    background-blend-mode: multiply;
+    color:white;
+    height: 300px;
+
+}
+
+
+/*
+.stan{
+    /*max-width: 600px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 200px;
+}
+*/
+
+.card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*width: 250px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*text-align: center;*/
+}
+.logo{
+    height:40px;
+
+}
+#footer_logo{
+    height: 25px;
+}
+.err{
+    color:red;
+}
+
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#content{
+    margin-top: 170px;
+}

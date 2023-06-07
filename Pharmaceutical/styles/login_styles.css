@@ -1,0 +1,41 @@
+/*Background color*/
+body {
+    background-color: white !important;
+}
+
+/*Border styles*/
+.container {
+    background-color: #01497b;
+    border-color: white !important;
+}
+
+
+/*Button and button text colors*/
+button {
+    background-color: #60a2ff;
+    color: white;
+}
+
+h1{
+    color:white;
+}
+
+/*Styles for the password and email inputs*/
+input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #60a2ff !important;
+    border-radius: 0 !important;
+    color: white !important;
+}
+
+
+/*Styles for the main div that has all other elements inside it*/
+.container {
+    margin-top: 150px !important;
+    width: 300px;
+}
+
+.err {
+    color: white;
+}

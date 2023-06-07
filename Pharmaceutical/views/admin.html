@@ -1,0 +1,98 @@
+<include href = "views/header.html"></include>
+
+
+
+
+
+
+<!--begin acordian-->
+<button class="accordion text-center">upload csv file</button>
+<div class="panel">
+    <div>
+<!--        <form method="post" enctype="multipart/form-data">-->
+            <div class="row mt-2">
+                <div class="col ">
+                    <div class="ml-5 ">
+                        <h4>here you can upload csv files to the data base</h4>
+                        <hr>
+                        <p>First click on choose file then navigate to the csv file you would like to upload</p>
+                        <p>Click on the file you want to upload then click Open</p>
+                        <p>The file name will now be visible next to choose file button</p>
+                        <p>Now click on Upload file button </p>
+                        <p>If the file has already been uploaded an alert will notify you file already exist </p>
+                        <p>If file is not a csv file an alert will notify you only csv file allowed</p>
+                        <p>If file passes requirments and uploads an alert will notify you file upload success </p>
+                    </div>
+                </div>
+                <div class="col ">
+
+                    <div class=" mt-5">
+
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Upload CSV files here</h5>
+                                <form method="post" enctype="multipart/form-data">
+                                        <div>
+                                            <p>upload csv: <input type="file" name="FilesToUpload" /></p>
+                                            <p><input type="submit" name="submit" value="UploadFile"/></p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+<!--        </form>-->
+    </div>
+</div>
+<!--end accordion-->
+
+
+
+<!--<div class="mt-4 ml-4">-->
+<!--    <h2 > Upload Files here </h2>-->
+<!--    <form method="post" enctype="multipart/form-data">-->
+<!--        <div>-->
+<!--            <p>upload csv: <input type="file" name="FilesToUpload" /></p>-->
+<!--            <p><input type="submit" name="submit" value="UploadFile"/></p>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+<h4 class="text-center mt-5">Registered Members</h4>
+<hr>
+<div class="container mt-5 mb-5">
+    <table id="tblCustomers">
+        <thead>
+        <tr>
+            <td>User ID</td>
+            <td>Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+
+        </tr>
+        </thead>
+        <tbody>
+        <repeat group="{{@member}}" value="{{@members}}">
+            <tr>
+                <td>{{@members['user_id']}}</td>
+                <td>{{@members['user_first']}}</td>
+                <td>{{@members['user_last']}}</td>
+                <td>{{@members['user_email']}}</td>
+
+            </tr>
+        </repeat>
+        </tbody>
+    </table>
+</div>
+
+<include href ="views/footer.html"></include>

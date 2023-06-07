@@ -1,0 +1,71 @@
+
+<include href="views/header.html"></include>
+<form action="#" method="post" >
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+       <!-- <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <br>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <br>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+        <hr>
+
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <button type="submit" class="registerbtn">Register</button>
+    </div>-->
+        <div class="form-group">
+            <label for="first-name"> First Name</label>
+            <input type="text" class="form-control" id="first-name" name="name" value="{{@name}}">
+            <check if="{{isset(@err['name'])}}">
+                <span class="err">{{ @err['name']}}</span><br>
+            </check>
+        </div>
+        <div class="form-group">
+            <label for="Lname"> Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname" value="{{@lname}}">
+            <check if="{{isset(@err['lname'])}}">
+                <span class="err">{{ @err['lname']}}</span><br>
+            </check>
+        </div>
+        <div class = "form-group mt-5">
+            <label for =  "email"> Email</label>
+            <input type="text" class = "form-control" id="email" name="email"
+                   placeholder="my_email@gmail.com" value="{{@email}}">
+            <check if="{{isset(@err['email'])}}">
+                <span class="err">{{ @err['email']}}</span><br>
+            </check>
+
+            <label for = "password"> Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" value="{{ @POST.password }}">
+            <check if="{{ isset(@err['password']) }}">
+                <span class="err">{{ @err['password'] }}</span>
+            </check>
+        </div>
+
+        <div class="form-group">
+            <label for="institution"> User institution</label>
+            <input type="text" class="form-control" id="institution" name="userInstitution" value="{{@userInstitution}}">
+            <check if="{{isset(@err['userInstitution'])}}">
+                <span class="err">{{ @err['userInstitution']}}</span><br>
+            </check>
+            <input type="submit" class="loginButtons mt-3" value="Register">
+        </div>
+
+
+    <div class="container signin">
+        <p>Already have an account? <a href="userLogin">Sign in</a>.</p>
+    </div>
+    </div>
+</form>
+</div>
+
+<include href="views/footer.html"></include>
+

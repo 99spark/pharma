@@ -1,0 +1,112 @@
+<include href="views/header.html"></include>
+<div class="container mt-4">
+
+
+<div class="row">
+    <div class="col">
+        <div class="ml-4">
+        <h4>Here you can enter a ASP drug Jcode </h4>
+        <p>The result will be the current ASP file content</p>
+        <ul>
+            <li>Jcode description</li>
+            <li>Dosage</li>
+            <li>Payment limit</li>
+        </ul>
+        </div>
+
+        <div class="container mt-4 mb-4">
+                <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Enter Code</h5>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="formGroupExampleInput" name="drugCode" value="{{@drugCode}}" placeholder="Enter Jcode">
+                            </div>
+                            <button type="submit" value="submit" class="btn btn-outline-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="col">
+
+
+        <div class="mt-4">
+<!--            <h4>Here you can enter a ASP drug Jcode </h4>-->
+<!--            <p>The result will be the current ASP file content</p>-->
+<!--            <ul>-->
+<!--                <li>Jcode description</li>-->
+<!--                <li>Dosage</li>-->
+<!--                <li>Payment limit</li>-->
+<!--            </ul>-->
+
+            <div class=" ml-5" id="content">
+                <h4>New to Asp price tracking tool?</h4>
+                <p>here you can get current price and dosage</p>
+                <p>Members can lookup multiple Jcodes </p>
+                <p>from different quarters and years</p>
+                <p>Sign up now to get all features ASP</p>
+                <p>tracking tool has to offer</p>
+                <button type="button" class="btn btn-outline-primary">Sign up</button>
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+<check if="{{@drugPrices}}">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="ml-auto mt-3">To search multiple codes <a
+                    href="https://pharmadp.greenriverdev.com/Pharmaceutical/userLogin">login</a> or <a
+                    href="https://pharmadp.greenriverdev.com/Pharmaceutical/register" target="_blank">
+                register</a>
+            </div>
+        </div>
+
+    </div>
+
+                <table class="table table-sm ml-2" id="table1">
+                    <thead>
+                    <tr>
+                        <th scope="col">Hcpcs code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Dosage</th>
+                        <th scope="col">Payment limit</th>
+                        <th scope="col">Quarter</th>
+                        <th scope="col">Year</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{@drugPrices['hcpsc_code']}}</td>
+                        <td>{{@drugPrices['short_description']}}</td>
+                        <td>{{@drugPrices['hcpcs_code_dosage']}}</td>
+                        <td>{{@drugPrices['payment_limit']}}</td>
+                        <td>{{@quarter}}</td>
+                        <td>{{@year}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+</check>
+        </div>
+    </div>
+</div>
+    <include href="views/footer.html"></include>
+
